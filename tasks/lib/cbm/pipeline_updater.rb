@@ -56,7 +56,7 @@ module Cbm
     def download_fly
       log 'Downloading fly executable...'
 
-      fly_download_url = "#{url}/api/v1/cli?arch=amd64&platform=linux"
+      fly_download_url = "#{url}/api/v1/cli?arch=amd64&platform=darwin"
       read_binary_open_mode = 'rb'
       stream = open(
         fly_download_url,
