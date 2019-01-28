@@ -14,11 +14,20 @@ inputs:
 - name: config-repo
 - name: credentials-repo
 
+
 params:
-  CONCOURSE_URL: null
-  CONCOURSE_USERNAME: null
-  CONCOURSE_PASSWORD: null
-  CONCOURSE_TEAM: null
+      BRANCH_RESOURCE_TEMPLATE: template-repo/examples/templates/my-repo-branch-resource-template.yml.erb
+      BRANCH_JOB_TEMPLATE: template-repo/examples/templates/my-repo-branch-job-template.yml.erb
+      PIPELINE_COMMON_RESOURCES_TEMPLATE: template-repo/examples/templates/my-repo-common-resources-template.yml.erb
+      CONCOURSE_URL: http://localhost:8030/
+      CONCOURSE_USERNAME: admin
+      CONCOURSE_PASSWORD: admin
+      PIPELINE_LOAD_VARS_FROM_1: config-repo/examples/config/my-repo-branch-manager-config.yml
+      PIPELINE_LOAD_VARS_FROM_2: credentials-repo/examples/credentials/my-repo-branch-manager-credentials.yml
+      PIPELINE_NAME: cbm-example-branches
+      GROUP_PER_BRANCH: true
 
 run:
   path: concourse-branch-manager/tasks/manage_branches.rb
+
+

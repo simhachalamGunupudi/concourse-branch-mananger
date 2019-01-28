@@ -14,7 +14,7 @@ resources:
 
 # This `git-branches` input resource determines which branches will be processed
 - name: branch-manager-git-branches
-  type: git-branches
+  type: git
   source:
     # Set this to the uri of your repo for which you want to dynamically build arbitrary branches
     uri: https://github.com/pivotaltracker/concourse-branch-manager.git
@@ -75,15 +75,27 @@ jobs:
     trigger: true
   - task: manage-branches
     file: concourse-branch-manager/tasks/manage-branches.yml
-    config:
-      params:
-        BRANCH_RESOURCE_TEMPLATE: template-repo/examples/templates/my-repo-branch-resource-template.yml.erb
-        BRANCH_JOB_TEMPLATE: template-repo/examples/templates/my-repo-branch-job-template.yml.erb
-        PIPELINE_COMMON_RESOURCES_TEMPLATE: template-repo/examples/templates/my-repo-common-resources-template.yml.erb
-        CONCOURSE_URL: {{CONCOURSE_URL}}
-        CONCOURSE_USERNAME: {{CONCOURSE_USERNAME}}
-        CONCOURSE_PASSWORD: {{CONCOURSE_PASSWORD}}
-        PIPELINE_LOAD_VARS_FROM_1: config-repo/examples/config/my-repo-branch-manager-config.yml
-        PIPELINE_LOAD_VARS_FROM_2: credentials-repo/examples/credentials/my-repo-branch-manager-credentials.yml
-        PIPELINE_NAME: cbm-example-branches
-        GROUP_PER_BRANCH: true
+
+
+
+#    config:
+#      platform: linux
+#
+#      image_resource:
+#              type: docker-image
+#              source: { repository: radial }
+#              type: docker-image
+#              source: { repository: busyboxplus }
+#              type: docker-image
+#              source: { repository: git }
+#
+#      inputs:
+#      - name: my-repo-branch
+#      - name: my-repo-common-resource
+#
+#      run:
+#        path: my-repo-branch/examples/tasks/my-repo-branch-task-script
+#
+
+
+
