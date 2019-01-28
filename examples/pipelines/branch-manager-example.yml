@@ -8,7 +8,7 @@ resources:
 - name: concourse-branch-manager
   type: git
   source:
-    uri: https://github.com/pivotaltracker/concourse-branch-manager.git
+    uri: https://github.com/simhachalamGunupudi/concourse-branch-mananger.git
     branch: master
     ignore_paths: [Gemfile, Gemfile.lock]
 
@@ -17,7 +17,7 @@ resources:
   type: git
   source:
     # Set this to the uri of your repo for which you want to dynamically build arbitrary branches
-    uri: https://github.com/pivotaltracker/concourse-branch-manager.git
+    uri: https://github.com/simhachalamGunupudi/concourse-branch-mananger.git
     branch_regexp: ".*"
     max_branches: 20
 
@@ -27,7 +27,7 @@ resources:
   type: git
   source:
     # Set this to the uri of your repo containing your resource/job templates for building branches
-    uri: https://github.com/pivotaltracker/concourse-branch-manager.git
+    uri: https://github.com/simhachalamGunupudi/concourse-branch-mananger.git
     branch: master
 #    paths: [examples/templates/*]
 
@@ -37,7 +37,7 @@ resources:
   type: git
   source:
     # Set this to the uri of your repo containing your non-secret non-credential config
-    uri: https://github.com/pivotaltracker/concourse-branch-manager.git
+    uri: https://github.com/simhachalamGunupudi/concourse-branch-mananger.git
     branch: master
 #    paths: [examples/config/*]
 
@@ -47,7 +47,7 @@ resources:
   type: git
   source:
     # Set this to the uri of your repo containing your non-secret non-credential config
-    uri: https://github.com/pivotaltracker/concourse-branch-manager.git
+    uri: https://github.com/simhachalamGunupudi/concourse-branch-mananger.git
     branch: master
 #    paths: [examples/credentials/*]
 
