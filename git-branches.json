@@ -1,4 +1,7 @@
 {
   "uri": "https://github.com/simhachalamGunupudi/concourse-branch-mananger.git",
-  "branches": "master"
+  "branches": [
+    "master",
+    "develop"
+  ]
 }
