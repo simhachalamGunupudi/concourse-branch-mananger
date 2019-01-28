@@ -55,15 +55,6 @@ module Cbm
 
     def download_fly
       log 'Downloading fly executable...'
-
-      fly_download_url = "#{url}/api/v1/cli?arch=amd64&platform=linux"
-      read_binary_open_mode = 'rb'
-      stream = open(
-        "http://localhost:8030",
-        read_binary_open_mode,
-        http_basic_authentication: [username, password])
-      IO.copy_stream(stream, fly_path)
-      process("chmod +x #{fly_path}")
     end
   end
 end
